@@ -7,18 +7,18 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
+{{ config(materialized='credit_scoring') }}
 
-with source_data as (
+with credit_data as (
 
-    select 1 as id
+    select "customer number" as id
     union all
     select null as id
 
 )
 
 select *
-from source_data
+from credit_data
 
 /*
     Uncomment the line below to remove records with null `id` values
